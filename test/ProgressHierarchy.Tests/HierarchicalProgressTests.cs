@@ -77,7 +77,7 @@ namespace ProgressHierarchy.Tests
             void ProgressChangedEventHandler(object sender, HierarchicalProgressChangedEventArgs args) => eventCount++;
 
             sut.ProgressChanged += ProgressChangedEventHandler;
-            
+
             sut.Report(0.5);
 
             sut.ProgressChanged -= ProgressChangedEventHandler;
@@ -91,7 +91,7 @@ namespace ProgressHierarchy.Tests
         public void Fork_scale_smaller_0_throws()
         {
             var sut = new HierarchicalProgress();
-            
+
             Assert.That(() => sut.Fork(-1), Throws.InstanceOf<ArgumentOutOfRangeException>());
         }
 
@@ -137,7 +137,7 @@ namespace ProgressHierarchy.Tests
             var eventArgs = new List<HierarchicalProgressChangedEventArgs>();
             sut.ProgressChanged += (sender, args) => eventArgs.Add(args);
 
-            var sut2 = sut.Fork(message:"Forking");
+            var sut2 = sut.Fork(message: "Forking");
 
             sut2.Report(0.5, "Testing");
 
@@ -145,7 +145,9 @@ namespace ProgressHierarchy.Tests
             Assert.That(eventArgs[0].Messages, Is.EqualTo(new[] { "Forking", "Testing" }));
         }
 
-        private static void NoopEventHandler(object o, HierarchicalProgressChangedEventArgs hierarchicalProgressChangedEventArgs)
+        private static void NoopEventHandler(
+            object o,
+            HierarchicalProgressChangedEventArgs hierarchicalProgressChangedEventArgs)
         {
         }
     }

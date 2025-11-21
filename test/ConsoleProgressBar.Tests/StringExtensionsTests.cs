@@ -8,11 +8,23 @@ namespace ConsoleProgressBar.Tests
         [Test]
         public void PadRightSurrogateAware_throws_on_illegal_arguments()
         {
-            Assert.That(() => StringExtensions.PadRightSurrogateAware(null, 1), Throws.ArgumentNullException, "'this' == null");
-            Assert.That(() => "".PadRightSurrogateAware(-1), Throws.InstanceOf<ArgumentOutOfRangeException>(), "'length' < 0");
+            Assert.That(
+                () => StringExtensions.PadRightSurrogateAware(null, 1),
+                Throws.ArgumentNullException,
+                "'this' == null");
+            Assert.That(
+                () => "".PadRightSurrogateAware(-1),
+                Throws.InstanceOf<ArgumentOutOfRangeException>(),
+                "'length' < 0");
             Assert.That(() => "".PadRightSurrogateAware(1, null), Throws.ArgumentNullException, "'ps' == null");
-            Assert.That(() => "".PadRightSurrogateAware(1, ""), Throws.InstanceOf<ArgumentOutOfRangeException>(), "'ps' = \"\"");
-            Assert.That(() => "".PadRightSurrogateAware(1, "  "), Throws.InstanceOf<ArgumentOutOfRangeException>(), "'ps' == \"  \"");
+            Assert.That(
+                () => "".PadRightSurrogateAware(1, ""),
+                Throws.InstanceOf<ArgumentOutOfRangeException>(),
+                "'ps' = \"\"");
+            Assert.That(
+                () => "".PadRightSurrogateAware(1, "  "),
+                Throws.InstanceOf<ArgumentOutOfRangeException>(),
+                "'ps' == \"  \"");
         }
 
         [Test]
@@ -44,16 +56,40 @@ namespace ConsoleProgressBar.Tests
         [Test]
         public void SubstringSurrogateAware_throws_on_illegal_arguments()
         {
-            Assert.That(() => StringExtensions.SubstringSurrogateAware(null, 1, 1), Throws.ArgumentNullException, "'this' == null");
-            Assert.That(() => "".SubstringSurrogateAware(1, 1), Throws.InstanceOf<ArgumentOutOfRangeException>(), "'startIndex' > length");
-            Assert.That(() => "".SubstringSurrogateAware(0, 1), Throws.InstanceOf<ArgumentOutOfRangeException>(), "'startIndex' + 'length' > length");
-            Assert.That(() => "".SubstringSurrogateAware(0, -1), Throws.InstanceOf<ArgumentOutOfRangeException>(), "'length' < 0");
+            Assert.That(
+                () => StringExtensions.SubstringSurrogateAware(null, 1, 1),
+                Throws.ArgumentNullException,
+                "'this' == null");
+            Assert.That(
+                () => "".SubstringSurrogateAware(1, 1),
+                Throws.InstanceOf<ArgumentOutOfRangeException>(),
+                "'startIndex' > length");
+            Assert.That(
+                () => "".SubstringSurrogateAware(0, 1),
+                Throws.InstanceOf<ArgumentOutOfRangeException>(),
+                "'startIndex' + 'length' > length");
+            Assert.That(
+                () => "".SubstringSurrogateAware(0, -1),
+                Throws.InstanceOf<ArgumentOutOfRangeException>(),
+                "'length' < 0");
 
-            Assert.That(() => "a".SubstringSurrogateAware(0, 2), Throws.InstanceOf<ArgumentOutOfRangeException>(), "'startIndex' + 'length' > length");
-            Assert.That(() => "a".SubstringSurrogateAware(2, 1), Throws.InstanceOf<ArgumentOutOfRangeException>(), "'startIndex' > length");
+            Assert.That(
+                () => "a".SubstringSurrogateAware(0, 2),
+                Throws.InstanceOf<ArgumentOutOfRangeException>(),
+                "'startIndex' + 'length' > length");
+            Assert.That(
+                () => "a".SubstringSurrogateAware(2, 1),
+                Throws.InstanceOf<ArgumentOutOfRangeException>(),
+                "'startIndex' > length");
 
-            Assert.That(() => "🎆".SubstringSurrogateAware(0, 2), Throws.InstanceOf<ArgumentOutOfRangeException>(), "'startIndex' + 'length' > length");
-            Assert.That(() => "🎆".SubstringSurrogateAware(2, 1), Throws.InstanceOf<ArgumentOutOfRangeException>(), "'startIndex' > length");
+            Assert.That(
+                () => "🎆".SubstringSurrogateAware(0, 2),
+                Throws.InstanceOf<ArgumentOutOfRangeException>(),
+                "'startIndex' + 'length' > length");
+            Assert.That(
+                () => "🎆".SubstringSurrogateAware(2, 1),
+                Throws.InstanceOf<ArgumentOutOfRangeException>(),
+                "'startIndex' > length");
         }
 
         [Test]
@@ -74,7 +110,7 @@ namespace ConsoleProgressBar.Tests
             Assert.That("🎆🎄".SubstringSurrogateAware(0, 1), Is.EqualTo("🎆"));
             Assert.That("🎆🎄".SubstringSurrogateAware(1, 1), Is.EqualTo("🎄"));
             Assert.That("🎆🎄".SubstringSurrogateAware(0, 2), Is.EqualTo("🎆🎄"));
-            
+
             Assert.That("🎆a🎄".SubstringSurrogateAware(0, 1), Is.EqualTo("🎆"));
             Assert.That("🎆a🎄".SubstringSurrogateAware(1, 1), Is.EqualTo("a"));
             Assert.That("🎆a🎄".SubstringSurrogateAware(0, 2), Is.EqualTo("🎆a"));

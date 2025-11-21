@@ -20,7 +20,7 @@ namespace ConsoleProgressBar.Demo
                     {
                         for (int i = 0; i < 11; i++)
                         {
-                            p11.Report(i/11d, $"Doing a lot of stuff: {i}/11");
+                            p11.Report(i / 11d, $"Doing a lot of stuff: {i}/11");
                             Thread.Sleep(300);
                         }
                     }

@@ -25,7 +25,11 @@ namespace ConsoleProgressBar
             if (s == null) throw new ArgumentNullException(nameof(s));
             if (ps == null) throw new ArgumentNullException(nameof(ps));
             if (length < 0) throw new ArgumentOutOfRangeException(nameof(length));
-            if (new StringInfo(ps).LengthInTextElements != 1) throw new ArgumentOutOfRangeException(nameof(ps), ps, "Padding string contains no or multiple code points.");
+            if (new StringInfo(ps).LengthInTextElements != 1)
+                throw new ArgumentOutOfRangeException(
+                    nameof(ps),
+                    ps,
+                    "Padding string contains no or multiple code points.");
 
             var currentLength = new StringInfo(s).LengthInTextElements;
             var missingLength = length - currentLength;
@@ -54,7 +58,10 @@ namespace ConsoleProgressBar
             var stringLength = new StringInfo(s).LengthInTextElements;
             if (startIndex < 0 || startIndex > stringLength)
             {
-                throw new ArgumentOutOfRangeException(nameof(startIndex), startIndex, "Start index is not within bounds.");
+                throw new ArgumentOutOfRangeException(
+                    nameof(startIndex),
+                    startIndex,
+                    "Start index is not within bounds.");
             }
 
             if (length < 0)
@@ -64,7 +71,10 @@ namespace ConsoleProgressBar
 
             if (startIndex + length > stringLength)
             {
-                throw new ArgumentOutOfRangeException(nameof(length), length, "Start index plus length are not within bounds.");
+                throw new ArgumentOutOfRangeException(
+                    nameof(length),
+                    length,
+                    "Start index plus length are not within bounds.");
             }
 
             var substringTextElements = s.EnumerateTextElements().Skip(startIndex).Take(length);
@@ -97,7 +107,7 @@ namespace ConsoleProgressBar
 
                 var part1 = s.SubstringSurrogateAware(0, 4) + "…";
                 var part2 = s.SubstringSurrogateAware(part2Start, part2Length);
-                
+
                 return part1 + part2;
             }
 

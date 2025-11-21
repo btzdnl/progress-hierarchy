@@ -5,5 +5,7 @@
     /// </summary>
     /// <param name="sender">The source of the event.</param>
     /// <param name="eventArgs">A <see cref="HierarchicalProgressChangedEventArgs"/> that contains the event data.</param>
-    public delegate void HierarchicalProgressChangedEventHandler(object sender, HierarchicalProgressChangedEventArgs eventArgs);
+    public delegate void HierarchicalProgressChangedEventHandler(
+        object sender,
+        HierarchicalProgressChangedEventArgs eventArgs);
 }
