@@ -1,6 +1,6 @@
 # progress-hierarchy
 
-[![CI Build](https://github.com/fuzzykiller/progress-hierarchy/workflows/CI%20Build/badge.svg)](https://github.com/fuzzykiller/progress-hierarchy/actions)
+[![CI Build](https://github.com/btzdnl/progress-hierarchy/workflows/CI%20Build/badge.svg)](https://github.com/btzdnl/progress-hierarchy/actions)
 
 ## ConsoleProgressBar
 
@@ -19,7 +19,7 @@ using (var pb = new ProgressBar())
     {
         // do stuff
     }
-    
+
     using (var p2 = pb.HierarchicalProgress.Fork(0.5))
     {
         // do stuff
@@ -45,7 +45,7 @@ The `HierarchicalProgress` class was renamed to not conflict with the `System.Pr
 using (var p = new HierarchicalProgress())
 {
     p.ProgressChanged += OnProgressChanged;
-    
+
     using (var p1 = p.Fork(0.5, "Long-running task A"))
     {
         for (var i = 0; i < 10; i++)
@@ -56,13 +56,13 @@ using (var p = new HierarchicalProgress())
             }
         }
     }
-    
+
     using (var p2 = p.Fork(0.5, "Long-running task B"))
     {
         for (var i = 0; i < 10; i++)
         {
             p2.Report(i/10, $"Item {i}");
-            
+
             // do stuff
         }
     }

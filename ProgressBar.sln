@@ -19,6 +19,8 @@ ProjectSection(SolutionItems) = preProject
 	.github\workflows\ci.yml = .github\workflows\ci.yml
 	.editorconfig = .editorconfig
 	global.json = global.json
+	README.md = README.md
+	LICENSE = LICENSE
 EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{1B78E54A-7584-40C4-AA0F-A691C04754E2}"
