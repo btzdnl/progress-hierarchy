@@ -14,10 +14,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgressHierarchy.Tests", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{10CE443A-B478-4B2A-97DA-6EFF3F1AEBC8}"
 ProjectSection(SolutionItems) = preProject
-	src\Directory.Build.props = src\Directory.Build.props
+	Directory.Build.props = Directory.Build.props
+	Directory.Packages.props = Directory.Packages.props
 	.github\workflows\ci.yml = .github\workflows\ci.yml
 	.editorconfig = .editorconfig
 EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{1B78E54A-7584-40C4-AA0F-A691C04754E2}"
+	ProjectSection(SolutionItems) = preProject
+		test\Directory.Build.props = test\Directory.Build.props
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,5 +57,9 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7A5762A1-175E-452B-9DCF-01CA073CC0D1}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{07406E62-2DC0-42A6-B675-2B9FCF2E50AF} = {1B78E54A-7584-40C4-AA0F-A691C04754E2}
+		{F705D623-7298-4E9F-9038-D090BC88B778} = {1B78E54A-7584-40C4-AA0F-A691C04754E2}
 	EndGlobalSection
 EndGlobal
