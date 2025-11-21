@@ -3,7 +3,7 @@
     <Import Project="..\Directory.Build.props" />
 
     <PropertyGroup>
-        <TargetFrameworks>net45;netcoreapp3.1</TargetFrameworks>
+        <TargetFrameworks>net45;net9.0</TargetFrameworks>
         <GenerateDocumentationFile>false</GenerateDocumentationFile>
         <IsPackable>false</IsPackable>
     </PropertyGroup>
