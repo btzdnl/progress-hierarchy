@@ -15,6 +15,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{10CE443A-B478-4B2A-97DA-6EFF3F1AEBC8}"
 ProjectSection(SolutionItems) = preProject
 	src\Directory.Build.props = src\Directory.Build.props
+	.github\workflows\ci.yml = .github\workflows\ci.yml
 EndProjectSection
 EndProject
 Global
