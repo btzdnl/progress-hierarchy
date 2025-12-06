@@ -9,6 +9,7 @@
     <Description>Command-line progress bar that can go backwards</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageTags>progress progress-reporting progress-bar command-line console</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,6 +18,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ProgressHierarchy\ProgressHierarchy.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 
 </Project>

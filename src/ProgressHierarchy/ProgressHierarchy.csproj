@@ -9,10 +9,15 @@
     <Description>Thread-safe hierarchical progress reporting</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageTags>progress progress-reporting thread-safe</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.SourceLink.GitHub" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 
 </Project>
