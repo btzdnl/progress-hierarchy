@@ -9,4 +9,9 @@
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
         <Deterministic>true</Deterministic>
     </PropertyGroup>
+
+    <PropertyGroup>
+        <!-- Suppress warning about targeting .NET Standard 1.3 -->
+        <NoWarn>NETSDK1215</NoWarn>
+    </PropertyGroup>
 </Project>
